@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using static System.Math;
 using static System.Linq.Enumerable;
 
@@ -9,6 +10,8 @@ namespace SampleCode
     {
         public void MathExample(double x, double y)
         {
+            var pow1 = Math.Pow(x, y);
+
             // These both use the static
             // class "Math"
             var pow = Pow(x, y);

@@ -23,7 +23,10 @@ namespace SampleCode
         /// <summary>
         /// Uses an expression body
         /// </summary>
-        public int AgeWithExpressionBody => BirthDate == default(DateTime) ? 0 : DateTime.Now.Year - BirthDate.Year;
+        public int AgeWithExpressionBody => 
+            BirthDate == default(DateTime) 
+            ? 0 
+            : DateTime.Now.Year - BirthDate.Year;
 
         /// <summary>
         /// Uses the old standard Method Body
@@ -41,7 +44,8 @@ namespace SampleCode
         /// </summary>
         /// <param name="pdfFile"></param>
         /// <returns></returns>
-        public int GetPageCountExpressionBody(string pdfFile) => PdfReader.Open(pdfFile).PageCount;
+        public int GetPageCountExpressionBody(string pdfFile) => 
+            PdfReader.Open(pdfFile).PageCount;
     }
 
     public class PdfReader
