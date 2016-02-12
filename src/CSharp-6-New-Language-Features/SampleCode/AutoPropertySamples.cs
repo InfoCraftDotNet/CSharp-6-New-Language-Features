@@ -76,10 +76,16 @@ namespace SampleCode
     public class CustomerImmutabilitySample
     {
         public string Name { get; }
+        public string OtherName { get; private set; }
 
         public CustomerImmutabilitySample(string first, string last)
         {
             Name = first + " " + last;
+        }
+
+        void ChangeTheName()
+        {
+            OtherName = "New Name";
         }
     }
 }

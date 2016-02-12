@@ -11,7 +11,15 @@ namespace ConsoleHarness
     {
         static void Main(string[] args)
         {
-                PrintPeope();
+            int i = 0;
+            Console.WriteLine($"See Something called {nameof(i)} {i++}");
+            Console.WriteLine($"See Something called {nameof(i)} {i++}");
+            Console.ReadKey();
+
+            //PrintCollections();
+            //var foo = new NullConditionalSamples();
+            //// Console.WriteLine(foo.UsingNullConditionals(null));
+
         }
 
         /// <summary>

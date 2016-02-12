@@ -14,18 +14,18 @@ namespace SampleCode
             PropertyChanged(this, new PropertyChangedEventArgs(info));
         }
 
-        private string _searchText;
-        private string _firstName;
+        private string _searchMyText;
+        private string _lastName;
 
         /// <summary>
         /// Uses MagicString
         /// </summary>
-        public string SearchText
+        public string SearchMyText
         {
-            get { return _searchText; }
+            get { return _searchMyText; }
             set
             {
-                _searchText = value;
+                _searchMyText = value;
                 NotifyPropertyChanged("SearchText");
             }
         }
@@ -33,13 +33,13 @@ namespace SampleCode
         /// <summary>
         /// Uses nameof() operator
         /// </summary>
-        public string FirstName
+        public string LastName
         {
-            get { return _firstName; }
+            get { return _lastName; }
             set
             {
-                _firstName = value; 
-                NotifyPropertyChanged(nameof(FirstName));
+                _lastName = value; 
+                NotifyPropertyChanged(nameof(LastName));
             }
         }
     }

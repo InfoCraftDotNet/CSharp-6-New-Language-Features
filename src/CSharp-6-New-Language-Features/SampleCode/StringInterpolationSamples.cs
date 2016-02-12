@@ -35,9 +35,10 @@ namespace SampleCode
         public void StringInterpolationSample()
         {
             var person = new PersonWithAutoPropInitializer();
+            decimal foo = 40m;
             person.FirstName = "Joe";
             person.LastName = "Reynolds";
-            Console.WriteLine($"New Person ID: {person.PersonId}");
+            Console.WriteLine($"New Person ID: {foo:d4}");
             Console.WriteLine($"New Name: {person.FirstName} {person.LastName}");
         }
 
