@@ -15,7 +15,7 @@ namespace SampleCode
         }
 
         private string _searchMyText;
-        private string _lastName;
+        private string _foo;
 
         /// <summary>
         /// Uses MagicString
@@ -35,10 +35,10 @@ namespace SampleCode
         /// </summary>
         public string LastName
         {
-            get { return _lastName; }
+            get { return _foo; }
             set
             {
-                _lastName = value; 
+                _foo = value; 
                 NotifyPropertyChanged(nameof(LastName));
             }
         }

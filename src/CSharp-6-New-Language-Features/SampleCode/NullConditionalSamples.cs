@@ -21,19 +21,17 @@ namespace SampleCode
         public string OldNullChecking(InvoiceListDataViewModel currentInvoice)
         {
             StringBuilder sb = new StringBuilder();
-            if (currentInvoice != null)
-            {
-                if (currentInvoice.TableName != null)
-                    sb.AppendLine(currentInvoice.TableName);
-                if (currentInvoice.JobId != null)
-                    sb.AppendLine(currentInvoice.JobId);
-                if (currentInvoice.StatementDate != null)
-                    sb.AppendLine(currentInvoice.StatementDate.Value.ToShortDateString());
-                if (currentInvoice.TransactionStartDate != null)
-                    sb.AppendLine(currentInvoice.TransactionStartDate.Value.ToShortDateString());
-                if (currentInvoice.TransactionEndDate != null)
-                    sb.AppendLine(currentInvoice.TransactionEndDate.Value.ToShortDateString());
-            }
+            if (currentInvoice == null) return sb.ToString();
+            if (currentInvoice.TableName != null)
+                sb.AppendLine(currentInvoice.TableName);
+            if (currentInvoice.JobId != null)
+                sb.AppendLine(currentInvoice.JobId);
+            if (currentInvoice.StatementDate != null)
+                sb.AppendLine(currentInvoice.StatementDate.Value.ToShortDateString());
+            if (currentInvoice.TransactionStartDate != null)
+                sb.AppendLine(currentInvoice.TransactionStartDate.Value.ToShortDateString());
+            if (currentInvoice.TransactionEndDate != null)
+                sb.AppendLine(currentInvoice.TransactionEndDate.Value.ToShortDateString());
             return sb.ToString();
         }
 
