@@ -24,9 +24,7 @@ namespace SampleCode
         /// Uses an expression body
         /// </summary>
         public int AgeWithExpressionBody => 
-            BirthDate == default(DateTime) 
-            ? 0 
-            : DateTime.Now.Year - BirthDate.Year;
+            BirthDate == default(DateTime) ? 0 : DateTime.Now.Year - BirthDate.Year;
 
         /// <summary>
         /// Uses the old standard Method Body

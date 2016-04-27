@@ -20,7 +20,7 @@ namespace SampleCode
         /// <summary>
         /// Uses MagicString
         /// </summary>
-        public string SearchMyText
+        public string SearchText
         {
             get { return _searchMyText; }
             set
@@ -33,13 +33,13 @@ namespace SampleCode
         /// <summary>
         /// Uses nameof() operator
         /// </summary>
-        public string LastName
+        public string FirstName
         {
             get { return _foo; }
             set
             {
                 _foo = value; 
-                NotifyPropertyChanged(nameof(LastName));
+                NotifyPropertyChanged(nameof(FirstName));
             }
         }
     }
