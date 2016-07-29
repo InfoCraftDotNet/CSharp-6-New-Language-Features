@@ -18,36 +18,36 @@ namespace SampleCode
         }
 
 
-        public string OldNullChecking(InvoiceListDataViewModel currentInvoice)
+        public void OldNullChecking(InvoiceListDataViewModel currentInvoice)
         {
-            StringBuilder sb = new StringBuilder();
-            if (currentInvoice == null) return sb.ToString();
-            if (currentInvoice.TableName != null)
-                sb.AppendLine(currentInvoice.TableName);
-            if (currentInvoice.JobId != null)
-                sb.AppendLine(currentInvoice.JobId);
-            if (currentInvoice.StatementDate != null)
-                sb.AppendLine(currentInvoice.StatementDate.Value.ToShortDateString());
-            if (currentInvoice.TransactionStartDate != null)
-                sb.AppendLine(currentInvoice.TransactionStartDate.Value.ToShortDateString());
-            if (currentInvoice.TransactionEndDate != null)
-                sb.AppendLine(currentInvoice.TransactionEndDate.Value.ToShortDateString());
-            return sb.ToString();
+            var someProxy = new SomeProxy();
+            var response = someProxy.SomeMethod();
+
+            if (response != null 
+                && response.Result != null 
+                && response.Result.Success == SuccessCode.Success)
+            {
+                Console.WriteLine("Yay!");
+            }
         }
 
-        public string UsingNullConditionals(InvoiceListDataViewModel currentInvoice)
+        public void UsingNullConditionals(InvoiceListDataViewModel currentInvoice)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(currentInvoice?.TableName);
-            sb.AppendLine(currentInvoice?.JobId);
-            sb.AppendLine(currentInvoice?.StatementDate?.ToShortDateString()
-                ?? DateTime.Now.ToShortDateString());
-            sb.AppendLine(currentInvoice?.TransactionStartDate?.ToShortDateString()
-                ?? DateTime.Now.ToShortDateString());
-            sb.AppendLine(currentInvoice?.TransactionEndDate?.ToShortDateString()
-                ?? DateTime.Now.ToShortDateString());
-            return sb.ToString();
+            var someProxy = new SomeProxy();
+            var response = someProxy.SomeMethod();
+
+            if (response?.Result?.Success == SuccessCode.Success)
+            {
+                Console.WriteLine("Yay!");
+            }
+
         }
+    }
+
+    public enum SuccessCode
+    {
+        Success,
+        Failure
     }
 
     public class InvoiceListDataViewModel
@@ -57,5 +57,23 @@ namespace SampleCode
         public DateTime? StatementDate { get; set; }
         public DateTime? TransactionStartDate { get; set; }
         public DateTime? TransactionEndDate { get; set; }
+    }
+
+    public class SomeProxy
+    {
+        public Response SomeMethod()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Response
+    {
+        public Result Result { get; set; }
+    }
+
+    public class Result
+    {
+        public SuccessCode Success { get; set; }
     }
 }

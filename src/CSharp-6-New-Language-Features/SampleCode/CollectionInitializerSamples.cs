@@ -41,7 +41,8 @@ namespace SampleCode
         }
 
         /// <summary>
-        /// Uses the new initializer, but accidently assigns two things to one key.
+        /// Uses the old initializer, but accidently assigns two things to one key.
+        /// This will break if it assigns two things to the same key.
         /// Maybe this is ok... Maybe not.
         /// </summary>
         /// <returns></returns>
@@ -58,8 +59,8 @@ namespace SampleCode
         }
 
         /// <summary>
-        /// Uses the old initializer
-        /// This is break if it assigns two things to the same key.
+        /// Uses the new initializer
+        /// This won't break if it assigns two things to the same key.
         /// This may be good... Or not.
         /// </summary>
         /// <returns></returns>
