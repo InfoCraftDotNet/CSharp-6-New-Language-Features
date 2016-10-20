@@ -35,11 +35,11 @@ namespace SampleCode
         public void StringInterpolationSample()
         {
             var person = new PersonWithAutoPropInitializer();
-            decimal foo = 40m;
+            decimal personId = 40m;
             person.FirstName = "Joe";
             person.LastName = "Reynolds";
-            Console.WriteLine($"New Person ID: {foo:d4}");
-            Console.WriteLine($"New Name: {person.FirstName} {person.LastName}");
+            Console.WriteLine($"New Person ID: {personId:d4}");
+            Console.WriteLine($"New Name: {person.WrongValue} {person.LastName}");
         }
 
         public string YuckyStuff()
